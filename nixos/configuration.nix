@@ -91,6 +91,7 @@
     firefox
     xorg.xcalc
     discord
+    element-desktop
     rxvt-unicode
     xfce.thunar
     xfce.thunar-volman
