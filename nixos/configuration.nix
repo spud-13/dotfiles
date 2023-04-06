@@ -92,8 +92,10 @@
     xorg.xcalc
     discord
     rxvt-unicode
+    xfce.thunar
+    xfce.thunar-volman
 
-
+    
     #Themeing
     papirus-icon-theme
 
