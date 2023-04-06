@@ -79,7 +79,8 @@
     neovim
     git
     htop
-
+    unzip
+    
 
     #Console Applications
     ncspot
@@ -91,7 +92,6 @@
     xorg.xcalc
     discord
     rxvt-unicode
-    pavucontrol
 
 
     #Themeing
