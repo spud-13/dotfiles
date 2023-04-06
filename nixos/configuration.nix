@@ -48,7 +48,17 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false; 
+  nixpkgs.config.pulseaudio = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+   };
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spud = {
@@ -85,7 +95,7 @@
     #Console Applications
     ncspot
     neofetch
-
+    mc
 
     #Desktop Applications
     firefox
@@ -93,20 +103,14 @@
     discord
     element-desktop
     rxvt-unicode
-    xfce.thunar
-    xfce.thunar-volman
-
-    
-    #Themeing
-    papirus-icon-theme
 
 
     #Desktop Environment
-    polybar
     sxhkd
     dmenu
     pywal
     xcompmgr
+    polybar
 
   ];
 
