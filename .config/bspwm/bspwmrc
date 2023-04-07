@@ -11,12 +11,12 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a "URxvt" desktop=^1 follow=false
+bspc rule -a "firefox" desktop=^2 follow=false
+bspc rule -a "mpv" desktop=^3 follow=false
+bspc rule -a "discord" desktop=^4 follow=false
+
 pgrep -x polybar > /dev/null || polybar main &
 xrdb ~/dotfiles/.Xresources
 xcompmgr &
 wal -R -a 85 &
-
-counter=0
-bspc query -D --names | while read -r name; do
-  printf 'ws-icon-%i = ";<insert-icon-here>"\n' $((counter++)) 
-done

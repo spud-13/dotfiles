@@ -71,10 +71,11 @@
   # Fonts
   fonts.fonts = with pkgs; [
     noto-fonts-emoji
+    noto-fonts-cjk
     dejavu_fonts
     liberation_ttf
     source-code-pro
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" ]; })
+    terminus_font
   ];
 
 
@@ -103,7 +104,7 @@
     discord
     element-desktop
     rxvt-unicode
-
+    mpv
 
     #Desktop Environment
     sxhkd
@@ -111,6 +112,7 @@
     pywal
     xcompmgr
     polybar
+    conky
 
   ];
 
