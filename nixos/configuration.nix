@@ -102,7 +102,7 @@
     discord
     rxvt-unicode
     mpv
-
+    
     #Desktop Environment
     sxhkd
     dmenu
