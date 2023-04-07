@@ -92,17 +92,14 @@
     htop
     unzip
     
-
     #Console Applications
     ncspot
     neofetch
-    mc
 
     #Desktop Applications
     firefox
     xorg.xcalc
     discord
-    element-desktop
     rxvt-unicode
     mpv
 
@@ -111,8 +108,7 @@
     dmenu
     pywal
     xcompmgr
-    polybar
-    conky
+    lemonbar
 
   ];
 
