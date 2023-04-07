@@ -30,18 +30,23 @@ Root() {
 
 Cpu() {
 	CPU=$(top -bn 1 | grep "%Cpu" | awk '{print 100-$8}')
-	printf "%5.2f" "$CPU"
+	printf "%5.2f%%" "$CPU"
+}
+
+Memory(){
+	MEM=$(free | grep Mem: | awk '{print $3/$2*100}')
+	printf "%5.2f%%" "$MEM"
 }
 
 Volume() {
 	VOLUME=$(amixer | grep "Front Right:" | awk '{print $5}' | sed 's/\[//g' | sed 's/\%\]//g')
-	printf "$VOLUME"
+	printf "$VOLUME%%"
 }
 
 
 
 # Print Output 
 while true; do
-	echo "%{l}$(Workspaces) %{r}ROOT: $(Root) | CPU: $(Cpu) | VOL: $(Volume) | $(Clock)" 
+	echo "%{l}$(Workspaces) %{r}ROOT: $(Root) | CPU: $(Cpu) | MEM: $(Memory) | VOL: $(Volume) | $(Clock)" 
         sleep 1
 done
