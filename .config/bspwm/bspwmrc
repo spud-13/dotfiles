@@ -16,7 +16,10 @@ bspc rule -a "firefox" desktop=^2 follow=false
 bspc rule -a "mpv" desktop=^3 follow=false
 bspc rule -a "discord" desktop=^4 follow=false
 
-pgrep -x polybar > /dev/null || polybar main &
+pkill xcompmgr lemonbar
+
 xrdb ~/dotfiles/.Xresources
 xcompmgr &
-wal -R -a 85 &
+wal -R -a 85 
+
+~/.config/lemonbar/launch.sh &
