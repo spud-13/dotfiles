@@ -1,8 +1,21 @@
 #!/usr/bin/env bash
 
+. "${HOME}/.cache/wal/colors.sh"
+
+
 Workspaces() {
 	ACTIVE=$(bspc query -D -d .active --names)
-	printf "$ACTIVE"
+		
+	for WORKSPACE in $(bspc query -D --names)
+	do
+		if [ $ACTIVE = $WORKSPACE ] 
+		then
+			printf "%%{B$color1} $WORKSPACE %%{B-}"
+		else
+			printf " $WORKSPACE "
+		fi
+	done
+
 }
 
 Clock() {
