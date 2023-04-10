@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+
+BAY_1=/media/tm-1/
+BAY_2=/media/tm-2/
+BAY_3=/media/tm-3/
+BAY_4=/media/tm-4/
+
+CONFIRM_BAY_1=$(cat $BAY_1.bay)
+CONFIRM_BAY_2=$(cat $BAY_2.bay)
+CONFIRM_BAY_3=$(cat $BAY_3.bay)
+CONFIRM_BAY_4=$(cat $BAY_4.bay)
+
+
+#BAY 2 BACKUP
+if [ $CONFIRM_BAY_2 -eq 2 ]
+then
+	echo "BAY 2 BACKUP..."
+	rsync -av --delete $BAY_2 $BAY_1/tm-2
+fi
+
+#BAY 3 BACKUP
+if [ $CONFIRM_BAY_3 -eq 3 ]
+then
+	echo "BAY 3 BACKUP..."
+	rsync -av --delete $BAY_3 $BAY_1/tm-3
+fi
+
+#BAY 4 BACKUP
+if [ $CONFIRM_BAY_4 -eq 4 ]
+then
+	echo "BAY 4 BACKUP..."
+	rsync -av --delete $BAY_4 $BAY_1/tm-4
+fi
+
+#HOME BACKUP
+echo "HOME BACKUP..."
+rsync -av --delete --exclude ".cache" --exclude ".mozilla" --exclude ".var" /home/spud/ $BAY_1/home/

@@ -30,12 +30,12 @@ Root() {
 
 Cpu() {
 	CPU=$(top -bn 1 | grep "%Cpu" | awk '{print 100-$8}')
-	printf "%5.2f%%" "$CPU"
+	printf "%3.0f%%" "$CPU"
 }
 
 Memory(){
 	MEM=$(free | grep Mem: | awk '{print $3/$2*100}')
-	printf "%5.2f%%" "$MEM"
+	printf "%3.0f%%" "$MEM"
 }
 
 Volume() {
