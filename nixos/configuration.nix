@@ -102,6 +102,7 @@
     discord
     rxvt-unicode
     mpv
+    pcmanfm
     
     #Desktop Environment
     sxhkd
@@ -112,7 +113,29 @@
 
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
+  fileSystems."/media/tm-1" = {
+    device = "/dev/disk/by-uuid/38140c19-e579-448b-be9c-484a2aaab11e";
+    fsType = "ext4";
+  };
+
+  fileSystems."/media/tm-2" = {
+    device = "/dev/disk/by-uuid/a94b388a-9ab4-4c08-830b-68bc95b34d7f";
+    fsType = "ext4";
+  };
+ 
+  fileSystems."/media/tm-3" = {
+    device = "/dev/disk/by-uuid/f32e4aa5-a503-48d5-bd7a-4df67d2ebd3b";
+    fsType = "ext4";
+  };
+
+  fileSystems."/media/tm-4" = {
+    device = "/dev/disk/by-uuid/f45eb91c-12f8-45ca-8be7-05ebce2cc5ed";
+    fsType = "ext4";
+  };
+
+
+
+ # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
