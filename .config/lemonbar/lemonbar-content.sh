@@ -39,7 +39,7 @@ Memory(){
 }
 
 Volume() {
-	VOLUME=$(amixer | grep "Front Right:" | awk '{print $5}' | sed 's/\[//g' | sed 's/\%\]//g')
+	VOLUME=$(amixer | grep "Front Right: Capture" | awk '{print $5}' | sed 's/\[//g' | sed 's/\%\]//g')
 	printf "$VOLUME%%"
 }
 
