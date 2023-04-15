@@ -22,4 +22,4 @@ xrdb ~/dotfiles/.Xresources
 xcompmgr &
 wal -R -a 85 
 
-~/.config/lemonbar/launch.sh &
+~/bin/lemonbar-launch.sh &
