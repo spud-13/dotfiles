@@ -102,8 +102,8 @@
     discord
     rxvt-unicode
     mpv
-    pcmanfm
-    
+    wine
+
     #Desktop Environment
     sxhkd
     dmenu
